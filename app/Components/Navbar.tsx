@@ -15,34 +15,35 @@ export default function Navbar() {
   return (
     <>
       <section className=" flex justify-between items-center capitalize py-1 border-b">
-        <div className="">
+        <Link href={"/"} className="">
           <Image
             src={"/images/logo.png"}
             alt="mtm-logo"
+            placeholder="blur"
+            blurDataURL={"/images/logo.png"}
             priority={true}
-            width={170}
-            height={170}
+            width={130}
+            height={130}
+            className="sm:w-auto h-auto"
             title="MTM"
           />
-        </div>
+        </Link>
 
         <div className="sm:flex hidden gap-4">
           <Link
-          title="products"
+            title="products"
             href={"/products"}
             className="p-2 hover:bg-red-500 hover:text-white hover:rounded-3xl duration-500 ">
             products
           </Link>
           <Link
-                    title="blogs"
-
+            title="blogs"
             href={"/blogs"}
             className="p-2 hover:bg-red-500 hover:text-white hover:rounded-3xl duration-500 ">
             blogs
           </Link>
           <Link
-                    title="about us"
-
+            title="about us"
             href={"/aboutus"}
             className="p-2 hover:bg-red-500 hover:text-white hover:rounded-3xl duration-500 ">
             about us
@@ -58,13 +59,14 @@ export default function Navbar() {
         </div>
         <div className="hidden sm:flex gap-4">
           <Link
-                    title="login"
-
+            title="login"
             href={"/login"}
             className="p-2 hover:bg-red-500 hover:text-white hover:rounded-3xl duration-500 ">
             login
           </Link>
-          <div title="cart" className="flex items-center  hover:bg-red-500 hover:text-white hover:rounded-3xl duration-500 px-2 ">
+          <div
+            title="cart"
+            className="flex items-center  hover:bg-red-500 hover:text-white hover:rounded-3xl duration-500 px-2 ">
             <Link href={"/cart"}>cart</Link>
             <CiShoppingCart size={"2em"} />
           </div>
@@ -78,39 +80,39 @@ export default function Navbar() {
       <div
         className={`sm:hidden dark:shadow-slate-50 shadow-md p-2 ${
           isOpen
-            ? " right-0 w-[50%] flex-col flex absolute gap-4 items-center"
+            ? " right-0 w-[50%] flex-col flex absolute gap-4 items-center bg-white/90 dark:bg-black/40 z-10"
             : "hidden"
         }`}>
         <Link
-        title="products"
-          href={"/"}
+          title="products"
+          href={"/products"}
           className="w-full text-center p-2 hover:rounded-2xl duration-300 hover:bg-red-400 hover:text-white">
           product
         </Link>
         <Link
           title="blogs"
-          href={"/"}
+          href={"/blogs"}
           className="w-full text-center  p-2 hover:rounded-2xl duration-300 hover:bg-red-400 hover:text-white">
           blogs
         </Link>
         <Link
           title="about us"
-          href={"/"}
+          href={"/aboutus"}
           className="w-full text-center  p-2 hover:rounded-2xl duration-300 hover:bg-red-400 hover:text-white">
           about us
         </Link>
         <Link
           title="login"
-          href={"/"}
+          href={"/login"}
           className="w-full text-center  p-2 hover:rounded-2xl duration-300 hover:bg-red-400 hover:text-white">
           login
         </Link>
         <Link
           title="cart"
-          href={"/"}
+          href={"/cart"}
           className="w-full flex justify-center items-center text-center  p-2 hover:rounded-2xl duration-300 hover:bg-red-400 hover:text-white">
-        cart<CiShoppingCart size={"1.6em"} />
-
+          cart
+          <CiShoppingCart size={"1.6em"} />
         </Link>
         <input
           type="text"
